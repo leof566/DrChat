@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="120" fill="#0f766e"/>
+  <circle cx="120" cy="110" r="220" fill="#14b8a6" opacity=".9"/>
+  <circle cx="420" cy="420" r="230" fill="#0d9488" opacity=".85"/>
+  <rect x="82" y="82" width="348" height="348" rx="90" fill="#fff"/>
+  <text x="256" y="235" text-anchor="middle" font-family="Arial, sans-serif" font-size="145" font-weight="800" fill="#0f766e">Dr</text>
+  <rect x="170" y="314" width="172" height="42" rx="21" fill="#0f766e"/>
+  <rect x="235" y="249" width="42" height="172" rx="21" fill="#0f766e"/>
+</svg>

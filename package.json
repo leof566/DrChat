@@ -1,0 +1,18 @@
+{
+  "name": "dr-chat-pwa",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vercel dev",
+    "start": "vercel dev",
+    "upload:pdf": "node scripts/create-vector-store.mjs"
+  },
+  "dependencies": {
+    "@vercel/node": "latest",
+    "openai": "latest"
+  },
+  "devDependencies": {
+    "vercel": "latest"
+  }
+}

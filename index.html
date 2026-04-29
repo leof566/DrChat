@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0f766e" />
+  <meta name="description" content="Dr Chat: asistente educativo para secretaría administrativa de salud." />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="assets/icon-192.png" />
+  <link rel="icon" href="assets/icon-192.png" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>Dr Chat</title>
+</head>
+<body>
+  <noscript>Necesitás activar JavaScript para usar Dr Chat.</noscript>
+
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">Dr</div>
+        <div>
+          <h1>Dr Chat</h1>
+          <p>Asistente educativo de salud</p>
+        </div>
+      </div>
+      <button id="installBtn" class="ghost-btn hidden" type="button">Instalar</button>
+    </header>
+
+    <main class="screen">
+      <section id="view-chat" class="view active" aria-labelledby="chatTitle">
+        <div class="hero-card">
+          <span class="pill">Modo privado · móvil</span>
+          <h2 id="chatTitle">Preguntá y estudiá simple</h2>
+          <p>Respuestas educativas sobre terminología médica, administración en salud, obras sociales y atención al paciente.</p>
+        </div>
+
+        <div id="messages" class="messages" aria-live="polite"></div>
+
+        <form id="chatForm" class="composer">
+          <label class="sr-only" for="questionInput">Escribí tu pregunta</label>
+          <textarea id="questionInput" rows="2" placeholder="Ej: ¿Qué diferencia hay entre tráquea, bronquios y bronquiolos?" required></textarea>
+          <div class="composer-actions">
+            <select id="modeSelect" aria-label="Modo de respuesta">
+              <option value="simple">Simple</option>
+              <option value="estudio">Estudio</option>
+              <option value="internet">Verificar fuente</option>
+              <option value="examen">Examen</option>
+            </select>
+            <button class="primary-btn" type="submit">Enviar</button>
+          </div>
+        </form>
+
+        <div class="quick-grid" aria-label="Acciones rápidas">
+          <button data-prompt="Haceme una pregunta trampa sobre terminología médica y corregime." type="button">Pregunta trampa</button>
+          <button data-prompt="Tomame un mini examen de 5 preguntas sobre sistema endocrino." type="button">Mini examen</button>
+          <button data-prompt="Explicame una palabra médica difícil de forma muy simple." type="button">Explicar fácil</button>
+          <button data-prompt="Simulá una situación de secretario médico atendiendo a un paciente." type="button">Caso práctico</button>
+        </div>
+      </section>
+
+      <section id="view-study" class="view" aria-labelledby="studyTitle">
+        <div class="section-title">
+          <h2 id="studyTitle">Módulos rápidos</h2>
+          <p>Base inicial armada con el libro cargado y contenidos del curso.</p>
+        </div>
+        <div id="moduleList" class="cards"></div>
+      </section>
+
+      <section id="view-exam" class="view" aria-labelledby="examTitle">
+        <div class="section-title">
+          <h2 id="examTitle">Evaluación</h2>
+          <p>Preguntas comunes, verdadero/falso y trampas.</p>
+        </div>
+        <div class="exam-panel">
+          <div class="exam-meta">
+            <span id="scoreBadge">Puntaje: 0/0</span>
+            <button id="resetExamBtn" class="ghost-btn" type="button">Reiniciar</button>
+          </div>
+          <div id="quizCard" class="quiz-card"></div>
+        </div>
+      </section>
+
+      <section id="view-notes" class="view" aria-labelledby="notesTitle">
+        <div class="section-title">
+          <h2 id="notesTitle">Mis apuntes</h2>
+          <p>Pegá resúmenes del curso. Quedan guardados solo en este navegador.</p>
+        </div>
+        <label class="field-label" for="notesInput">Apuntes propios</label>
+        <textarea id="notesInput" class="notes-box" rows="12" placeholder="Pegá acá definiciones, resúmenes o temas que quieras estudiar..."></textarea>
+        <button id="saveNotesBtn" class="primary-btn full" type="button">Guardar apuntes</button>
+        <p class="small-note">Para que el chatbot lea PDFs completos con IA real, usá el backend y el vector store explicado en el README.</p>
+      </section>
+    </main>
+
+    <nav class="bottom-nav" aria-label="Navegación principal">
+      <button class="nav-btn active" data-view="chat" type="button">Chat</button>
+      <button class="nav-btn" data-view="study" type="button">Estudiar</button>
+      <button class="nav-btn" data-view="exam" type="button">Examen</button>
+      <button class="nav-btn" data-view="notes" type="button">Apuntes</button>
+    </nav>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
