@@ -9,6 +9,7 @@
     "upload:pdf": "node scripts/create-vector-store.mjs"
   },
   "dependencies": {
+    "@google/genai": "latest"
     "@vercel/node": "latest",
     "openai": "latest"
   },
