@@ -32,12 +32,8 @@ export default async function handler(req, res) {
 
     // Internet verificado: la app intenta citar fuentes confiables.
     tools.push({
-      type: "web_search",
-      filters: {
-        allowed_domains: TRUSTED_DOMAINS
-      }
-    });
-
+  type: "web_search"
+});
     // Opcional: si cargás tus PDFs a un vector store de OpenAI, pegá su ID en Vercel.
     if (process.env.OPENAI_VECTOR_STORE_ID) {
       tools.push({
